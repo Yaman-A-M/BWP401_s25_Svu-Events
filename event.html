@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <!-- Meta data -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>تفاصيل الفعالية | دليل فعاليات الجامعة الافتراضية</title>
+  <meta name="description" content="صفحة تفاصيل فعالية ضمن دليل فعاليات الجامعة الافتراضية." />
+
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap and icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <!-- Skip link -->
+  <a href="#mainContent" class="skip-link">انتقل إلى المحتوى</a>
+
+  <!-- Header -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark custom-navbar fixed-top">
+      <div class="container">
+        <a class="navbar-brand brand-logo" href="index.html">
+          <img src="assets/img/logo.png" alt="شعار دليل الفعاليات" class="logo-img">
+          <span>دليل الفعاليات</span>
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNavbar"
+          aria-controls="mainNavbar"
+          aria-expanded="false"
+          aria-label="تبديل القائمة"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="index.html">الرئيسية</a></li>
+            <li class="nav-item"><a class="nav-link" href="events.html">الفعاليات</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">عن الدليل</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">اتصل بنا</a></li>
+          </ul>
+
+          <div class="d-flex align-items-center gap-2">
+            <button class="theme-toggle" id="themeToggle" aria-label="تبديل الوضع الليلي">
+              <i class="bi bi-moon-stars-fill"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main content -->
+  <main id="mainContent">
+    <!-- Warning message when no event is selected -->
+    <section class="py-5 section-space">
+      <div class="container">
+        <div id="noEventSelectedMessage" class="alert alert-warning rounded-4 d-none" role="alert">
+          <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3">
+            <span>لم يتم تحديد فعالية بعد. الرجاء العودة إلى صفحة الفعاليات واختيار فعالية لعرض تفاصيلها.</span>
+            <a href="events.html" class="btn btn-outline-primary">
+              <i class="bi bi-arrow-right-circle ms-1"></i>
+              العودة إلى الفعاليات
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Event details wrapper -->
+    <div id="eventDetailsWrapper">
+      <!-- Event hero section -->
+      <section class="py-5 bg-white section-space event-hero-section">
+        <div class="container">
+          <div class="row g-4 align-items-center">
+            <div class="col-lg-6 reveal">
+              <span id="eventCategoryBadge" class="badge bg-info text-dark mb-3">التصنيف</span>
+              <h1 id="eventTitle" class="fw-bold mb-3 event-main-title">عنوان الفعالية</h1>
+              <p id="eventShortDescription" class="text-muted mb-4">
+                وصف مختصر للفعالية سيظهر هنا بعد اختيارها من صفحة الفعاليات.
+              </p>
+
+              <!-- Event quick info -->
+              <ul class="list-group list-group-flush shadow-sm rounded-4 overflow-hidden mb-4 event-info-list">
+                <li class="list-group-item">
+                  <i class="bi bi-calendar-event ms-2"></i>
+                  <strong>التاريخ:</strong>
+                  <span id="eventDate">---</span>
+                </li>
+                <li class="list-group-item">
+                  <i class="bi bi-clock ms-2"></i>
+                  <strong>الوقت:</strong>
+                  <span id="eventTime">---</span>
+                </li>
+                <li class="list-group-item">
+                  <i class="bi bi-geo-alt ms-2"></i>
+                  <strong>المكان:</strong>
+                  <span id="eventLocation">---</span>
+                </li>
+                <li class="list-group-item">
+                  <i class="bi bi-person-workspace ms-2"></i>
+                  <strong>المنظّم:</strong>
+                  <span id="eventOrganizer">---</span>
+                </li>
+              </ul>
+
+              <!-- Event actions -->
+              <div class="d-flex flex-wrap gap-2 event-actions">
+                <a href="events.html" class="btn btn-outline-primary">
+                  <i class="bi bi-arrow-right-circle ms-1"></i>
+                  العودة للفعاليات
+                </a>
+
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#bookingModal">
+                  <i class="bi bi-ticket-perforated ms-1"></i>
+                  احجز مكانًا
+                </button>
+
+                <button class="btn btn-outline-success" id="addToCalendarBtn">
+                  <i class="bi bi-calendar-plus ms-1"></i>
+                  أضف للتقويم
+                </button>
+
+                <button class="btn btn-outline-dark" id="shareEventBtn">
+                  <i class="bi bi-share ms-1"></i>
+                  شارك
+                </button>
+              </div>
+
+              <!-- Action message -->
+              <div id="eventActionMessage" class="alert alert-success rounded-4 mt-3 d-none" role="alert"></div>
+            </div>
+
+            <!-- Event main image -->
+            <div class="col-lg-6 reveal">
+              <div class="event-hero-shape">
+                <img
+                  id="eventHeroImage"
+                  src="assets/img/event1.jpg"
+                  class="event-hero-img"
+                  alt="صورة الفعالية"
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Event description and map -->
+      <section class="py-5 section-space">
+        <div class="container">
+          <div class="row g-4">
+            <div class="col-lg-8 reveal">
+              <div class="card border-0 shadow-sm rounded-4 event-details-card">
+                <div class="card-body p-4">
+                  <h2 class="h4 fw-bold mb-3">وصف الفعالية</h2>
+                  <p id="eventDescription1">سيتم عرض الفقرة الأولى من وصف الفعالية هنا.</p>
+                  <p id="eventDescription2">سيتم عرض الفقرة الثانية من وصف الفعالية هنا.</p>
+                  <p id="eventDescription3" class="mb-0">سيتم عرض الفقرة الثالثة من وصف الفعالية هنا.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 reveal">
+              <div class="card border-0 shadow-sm rounded-4 event-map-card">
+                <div class="card-body p-4">
+                  <h2 class="h5 fw-bold mb-3">خريطة الموقع</h2>
+                  <img
+                    id="eventMapImage"
+                    src="assets/img/map.jpg"
+                    class="map-img mb-3"
+                    alt="خريطة مكان الفعالية"
+                    role="button"
+                    tabindex="0"
+                    data-previewable="true"
+                  >
+                  <p id="eventMapText" class="text-muted mb-0">
+                    ستظهر هنا معلومات الموقع الخاصة بالفعالية المختارة.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Event gallery -->
+      <section class="py-5 bg-white section-space">
+        <div class="container">
+          <div class="reveal">
+            <h2 class="h3 fw-bold mb-4">صور توضيحية للفعالية</h2>
+          </div>
+
+          <div class="row g-3">
+            <div class="col-md-6 col-lg-4 gallery-item reveal">
+              <img
+                id="galleryImage1"
+                src="assets/img/event1.jpg"
+                class="gallery-img shadow-sm"
+                alt="صورة توضيحية للفعالية 1"
+                role="button"
+                tabindex="0"
+                data-previewable="true"
+              >
+            </div>
+
+            <div class="col-md-6 col-lg-4 gallery-item reveal">
+              <img
+                id="galleryImage2"
+                src="assets/img/event2.jpg"
+                class="gallery-img shadow-sm"
+                alt="صورة توضيحية للفعالية 2"
+                role="button"
+                tabindex="0"
+                data-previewable="true"
+              >
+            </div>
+
+            <div class="col-md-6 col-lg-4 gallery-item reveal">
+              <img
+                id="galleryImage3"
+                src="assets/img/event3.jpg"
+                class="gallery-img shadow-sm"
+                alt="صورة توضيحية للفعالية 3"
+                role="button"
+                tabindex="0"
+                data-previewable="true"
+              >
+            </div>
+
+            <div class="col-md-6 col-lg-6 gallery-item reveal">
+              <img
+                id="galleryImage4"
+                src="assets/img/event4.jpg"
+                class="gallery-img shadow-sm"
+                alt="صورة توضيحية للفعالية 4"
+                role="button"
+                tabindex="0"
+                data-previewable="true"
+              >
+            </div>
+
+            <div class="col-md-6 col-lg-6 gallery-item reveal">
+              <img
+                id="galleryImage5"
+                src="assets/img/event5.jpg"
+                class="gallery-img shadow-sm"
+                alt="صورة توضيحية للفعالية 5"
+                role="button"
+                tabindex="0"
+                data-previewable="true"
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Related events section -->
+      <section class="py-5 section-space">
+        <div class="container">
+          <div class="reveal">
+            <h2 class="h3 fw-bold mb-4">فعاليات ذات صلة</h2>
+          </div>
+
+          <div id="relatedEventsContainer" class="row g-4 related-events-row">
+            <!-- سيتم توليد الفعاليات ذات الصلة ديناميكيًا من main.js -->
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Booking modal -->
+  <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content rounded-4">
+        <div class="modal-header">
+          <h2 class="modal-title fs-5 fw-bold" id="bookingModalLabel">حجز مكان في الفعالية</h2>
+          <button type="button" class="btn-close ms-0" data-bs-dismiss="modal" aria-label="إغلاق"></button>
+        </div>
+        <div class="modal-body">
+          <form id="bookingForm">
+            <div class="mb-3">
+              <label for="fullName" class="form-label">الاسم الكامل</label>
+              <input type="text" class="form-control" id="fullName" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="studentEmail" class="form-label">البريد الإلكتروني</label>
+              <input type="email" class="form-control" id="studentEmail" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="notes" class="form-label">ملاحظات</label>
+              <textarea class="form-control" id="notes" rows="3"></textarea>
+            </div>
+
+            <div class="alert alert-success d-none rounded-4" id="bookingAlert">
+              تم إرسال طلب الحجز بنجاح.
+            </div>
+
+            <button type="submit" class="btn btn-primary">تأكيد الحجز</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Image preview modal -->
+  <div class="modal fade image-preview-modal" id="imagePreviewModal" tabindex="-1" aria-labelledby="imagePreviewModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content border-0">
+        <div class="modal-header preview-modal-header">
+          <h2 class="modal-title fs-5 fw-bold" id="imagePreviewModalLabel">معاينة الصورة</h2>
+          <button type="button" class="btn-close ms-0" data-bs-dismiss="modal" aria-label="إغلاق"></button>
+        </div>
+
+        <div class="modal-body preview-modal-body">
+          <button type="button" class="preview-nav-btn preview-prev" id="previewPrevBtn" aria-label="الصورة السابقة">
+            <i class="bi bi-chevron-right"></i>
+          </button>
+
+          <div class="preview-image-wrapper">
+            <img id="previewModalImage" src="" alt="معاينة الصورة" class="preview-modal-image">
+          </div>
+
+          <button type="button" class="preview-nav-btn preview-next" id="previewNextBtn" aria-label="الصورة التالية">
+            <i class="bi bi-chevron-left"></i>
+          </button>
+        </div>
+
+        <div class="modal-footer preview-modal-footer justify-content-between">
+          <div class="preview-image-meta">
+            <span id="previewImageCounter">1 / 1</span>
+          </div>
+          <div class="preview-image-actions d-flex gap-2">
+            <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">إغلاق</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer pt-5 pb-3">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <h3 class="h5 fw-bold">دليل الفعاليات</h3>
+          <p class="mb-0">
+            منصة لعرض فعاليات الجامعة الافتراضية السورية بشكل منظم ومتاح للجميع.
+          </p>
+        </div>
+
+        <div class="col-lg-4">
+          <h3 class="h5 fw-bold">روابط مهمة</h3>
+          <ul class="list-unstyled">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="events.html">الفعاليات</a></li>
+            <li><a href="about.html">عن الدليل</a></li>
+            <li><a href="contact.html">اتصل بنا</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4">
+          <h3 class="h5 fw-bold">تواصل معنا</h3>
+          <p class="mb-2">
+            <i class="bi bi-envelope-fill ms-2"></i>
+            <a href="mailto:support@svuonline.org" class="text-decoration-none text-reset">support@svuonline.org</a>
+          </p>
+          <p class="mb-3">
+            <i class="bi bi-telephone-fill ms-2"></i>
+            <span dir="ltr">+963-11-2113464</span>
+          </p>
+
+          <div class="d-flex gap-3">
+            <a href="https://www.facebook.com/svuonline.org" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-facebook fs-5"></i>
+            </a>
+            <a href="https://www.instagram.com/syrian_virtual_university" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-instagram fs-5"></i>
+            </a>
+            <a href="https://t.me/Syrianvirtualuniversity" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-telegram fs-5"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <hr class="border-light my-4">
+
+      <div class="text-center">
+        <small>جميع الحقوق محفوظة © 2026 | دليل فعاليات الجامعة الافتراضية</small>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll top button -->
+  <button id="scrollTopBtn" class="scroll-top-btn" aria-label="العودة إلى الأعلى">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/events-data.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <!-- Meta data -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>اتصل بنا | دليل فعاليات الجامعة الافتراضية</title>
+  <meta name="description" content="صفحة التواصل مع فريق دليل فعاليات الجامعة الافتراضية." />
+
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap and icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <!-- Skip link -->
+  <a href="#mainContent" class="skip-link">انتقل إلى المحتوى</a>
+
+  <!-- Header -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark custom-navbar fixed-top">
+      <div class="container">
+        <a class="navbar-brand brand-logo" href="index.html">
+          <img src="assets/img/logo.png" alt="شعار دليل الفعاليات" class="logo-img">
+          <span>دليل الفعاليات</span>
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNavbar"
+          aria-controls="mainNavbar"
+          aria-expanded="false"
+          aria-label="تبديل القائمة"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="index.html">الرئيسية</a></li>
+            <li class="nav-item"><a class="nav-link" href="events.html">الفعاليات</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">عن الدليل</a></li>
+            <li class="nav-item"><a class="nav-link active" href="contact.html">اتصل بنا</a></li>
+          </ul>
+
+          <div class="d-flex align-items-center gap-2">
+            <button class="theme-toggle" id="themeToggle" aria-label="تبديل الوضع الليلي">
+              <i class="bi bi-moon-stars-fill"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main content -->
+  <main id="mainContent">
+    <!-- Page header -->
+    <section class="contact-header section-space">
+      <div class="container text-center reveal">
+        <h1 class="fw-bold mb-3 page-title">اتصل بنا</h1>
+        <p class="text-muted mb-0">
+          يمكنكم التواصل معنا للاستفسار عن الفعاليات أو اقتراح أنشطة جديدة أو إرسال ملاحظاتكم حول الدليل.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact section -->
+    <section class="py-5 section-space">
+      <div class="container">
+        <div class="row g-4">
+          <!-- Contact form card -->
+          <div class="col-lg-7 reveal">
+            <div class="card border-0 shadow-sm rounded-4 contact-card">
+              <div class="card-body p-4">
+                <h2 class="h4 fw-bold mb-4">نموذج التواصل</h2>
+
+                <!-- Form alert -->
+                <div id="formAlert" class="alert d-none rounded-4" role="alert"></div>
+
+                <!-- Contact form -->
+                <form id="contactForm" novalidate>
+                  <div class="mb-3">
+                    <label for="name" class="form-label fw-bold">الاسم</label>
+                    <input type="text" class="form-control" id="name" placeholder="أدخل اسمك الكامل" required>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="email" class="form-label fw-bold">البريد الإلكتروني</label>
+                    <input type="email" class="form-control" id="email" placeholder="example@email.com" required>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="message" class="form-label fw-bold">الرسالة</label>
+                    <textarea class="form-control" id="message" rows="6" placeholder="اكتب رسالتك هنا..." required></textarea>
+                  </div>
+
+                  <!-- Form buttons -->
+                  <div class="d-flex flex-wrap gap-2">
+                    <button type="submit" class="btn btn-primary px-4">
+                      <i class="bi bi-send-fill ms-1"></i>
+                      إرسال
+                    </button>
+
+                    <button type="reset" class="btn btn-outline-secondary px-4">
+                      <i class="bi bi-eraser ms-1"></i>
+                      مسح الحقول
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact info sidebar -->
+          <div class="col-lg-5">
+            <!-- Alternative contact info -->
+            <div class="card border-0 shadow-sm rounded-4 mb-4 contact-card reveal">
+              <div class="card-body p-4">
+                <h2 class="h5 fw-bold mb-3">معلومات تواصل بديلة</h2>
+                <p>
+                  <i class="bi bi-envelope-fill ms-2 text-primary"></i>
+                  <a href="mailto:support@svuonline.org" class="text-decoration-none text-reset">support@svuonline.org</a>
+                </p>
+                <p>
+                  <i class="bi bi-telephone-fill ms-2 text-success"></i>
+                  <span dir="ltr">+963-11-2113464</span>
+                </p>
+                <p>
+                  <i class="bi bi-geo-alt-fill ms-2 text-danger"></i>
+                  الجامعة الافتراضية السورية
+                </p>
+                <p class="text-muted mb-0">
+                  يمكنكم أيضًا استخدام البريد الإلكتروني للتواصل بخصوص تعديل بيانات فعالية أو اقتراح نشاط جديد لإضافته إلى الدليل.
+                </p>
+              </div>
+            </div>
+
+            <!-- Social links -->
+            <div class="card border-0 shadow-sm rounded-4 contact-card reveal">
+              <div class="card-body p-4">
+                <h2 class="h5 fw-bold mb-3">تابعنا</h2>
+                <div class="d-flex gap-3 fs-4 mb-3 social-links">
+                  <a href="https://www.facebook.com/svuonline.org" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-primary" aria-label="فيسبوك">
+                    <i class="bi bi-facebook"></i>
+                  </a>
+                  <a href="https://www.instagram.com/syrian_virtual_university" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-danger" aria-label="إنستغرام">
+                    <i class="bi bi-instagram"></i>
+                  </a>
+                  <a href="https://t.me/Syrianvirtualuniversity" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-info" aria-label="تيليغرام">
+                    <i class="bi bi-telegram"></i>
+                  </a>
+                </div>
+                <hr>
+                <p class="text-muted mb-0">
+                  نحرص على قراءة جميع الرسائل، وسيتم الرد على الاستفسارات المهمة في أقرب وقت ممكن عبر البريد أو القنوات المتاحة.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer pt-5 pb-3">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <h3 class="h5 fw-bold">دليل الفعاليات</h3>
+          <p class="mb-0">
+            منصة لعرض فعاليات الجامعة الافتراضية السورية بشكل منظم ومتاح للجميع.
+          </p>
+        </div>
+
+        <div class="col-lg-4">
+          <h3 class="h5 fw-bold">روابط مهمة</h3>
+          <ul class="list-unstyled">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="events.html">الفعاليات</a></li>
+            <li><a href="about.html">عن الدليل</a></li>
+            <li><a href="contact.html">اتصل بنا</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4">
+          <h3 class="h5 fw-bold">تواصل معنا</h3>
+          <p class="mb-2">
+            <i class="bi bi-envelope-fill ms-2"></i>
+            <a href="mailto:support@svuonline.org" class="text-decoration-none text-reset">support@svuonline.org</a>
+          </p>
+          <p class="mb-3">
+            <i class="bi bi-telephone-fill ms-2"></i>
+            <span dir="ltr">+963-11-2113464</span>
+          </p>
+
+          <div class="d-flex gap-3">
+            <a href="https://www.facebook.com/svuonline.org" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-facebook fs-5"></i>
+            </a>
+            <a href="https://www.instagram.com/syrian_virtual_university" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-instagram fs-5"></i>
+            </a>
+            <a href="https://t.me/Syrianvirtualuniversity" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-telegram fs-5"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <hr class="border-light my-4">
+
+      <div class="text-center">
+        <small>جميع الحقوق محفوظة © 2026 | دليل فعاليات الجامعة الافتراضية</small>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll top button -->
+  <button id="scrollTopBtn" class="scroll-top-btn" aria-label="العودة إلى الأعلى">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
